@@ -9,7 +9,7 @@ const talkedRecently = new Set();
 const warned1 = new Set();
 const warned2 = new Set();
 const wasMuted = new Set();
-const guild = `718585327161442304`
+const guild = 718585327161442304;
 var status = "Helping World President";
 
 const config = require("./config.json");
