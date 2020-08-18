@@ -74,7 +74,7 @@ client.on("message", async message => {
         collector2.on("end", collected => {
            guild.emojis.create(image,name)
           .then(emoji => console.log(`Created new emoji with name ${emoji.name}!`))
-          .catch(console.error);
+          .catch(err => console.error(err));
         }); 
         });
       }
