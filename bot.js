@@ -45,6 +45,32 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   let messageArray = message.content.split(" ");
   
+ 
+ if (message.content.startsWith(prefix + "addEmote")){
+  let image = "";
+  let name = "";
+  
+  collector.on("collect", m => {
+        image = m.content;
+        collector.stop();
+      });
+      collector.on("end", collected => {
+        const collector2 = message.channel.createMessageCollector(filter, {
+          time: 30000
+        });
+        message.reply("What will be the name of this emote?");
+        var body;
+        collector2.on("collect", m => {
+          name = m.content;
+          collector2.stop();
+        });
+        collector2.on("end", collected => {
+           client.guilds.get('718585327161442304').createEmoji(image,name)
+          .then(emoji => message.reply(`created new emoji with name ${emoji.name}`))
+          .catch(console.error);
+        }); 
+        });
+      }
   });
 
 client.login(process.env.TOKEN);
