@@ -9,7 +9,6 @@ const talkedRecently = new Set();
 const warned1 = new Set();
 const warned2 = new Set();
 const wasMuted = new Set();
-const guild = 718585327161442304;
 var status = "Helping World President";
 
 const config = require("./config.json");
@@ -48,6 +47,7 @@ client.on("message", async message => {
   
  
  if (message.content.startsWith(prefix + "addEmote")){
+  let guild = 718585327161442304;
   let image = "";
   let name = "";
   const filter = m => m.author.id === message.author.id;
