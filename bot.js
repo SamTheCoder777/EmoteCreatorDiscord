@@ -1,4 +1,4 @@
-// server.js
+ // server.js
 // where your node app starts
 
 // init project
