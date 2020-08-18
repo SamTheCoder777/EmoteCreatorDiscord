@@ -49,6 +49,11 @@ client.on("message", async message => {
  if (message.content.startsWith(prefix + "addEmote")){
   let image = "";
   let name = "";
+  const filter = m => m.author.id === message.author.id;
+  const collector = message.channel.createMessageCollector(filter, {
+  time: 30000
+  });
+  
   
   collector.on("collect", m => {
         image = m.content;
