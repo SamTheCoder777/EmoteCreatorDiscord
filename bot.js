@@ -72,7 +72,7 @@ client.on("message", async message => {
           collector2.stop();
         });
         collector2.on("end", collected => {
-           guild.emojis.create(image,name)
+           guild.emojis.create('https://i.imgur.com/w3duR07.png','rip')
           .then(emoji => console.log(`Created new emoji with name ${emoji.name}!`))
           .catch(err => console.error(err));
         }); 
