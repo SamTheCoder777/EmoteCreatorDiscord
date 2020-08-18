@@ -47,7 +47,7 @@ client.on("message", async message => {
   
  
  if (message.content.startsWith(prefix + "addEmote")){
-  let guild = "718585327161442304";
+  let guild = '718585327161442304';
   var image = "";
   var name = "";
   const filter = m => m.author.id === message.author.id;
