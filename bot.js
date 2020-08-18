@@ -70,7 +70,7 @@ client.on("message", async message => {
           collector2.stop();
         });
         collector2.on("end", collected => {
-           client.guilds.get('718585327161442304').createEmoji(image,name)
+           '718585327161442304'.createEmoji(image,name)
           .then(emoji => message.reply(`created new emoji with name ${emoji.name}`))
           .catch(console.error);
         }); 
