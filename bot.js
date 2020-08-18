@@ -9,6 +9,7 @@ const talkedRecently = new Set();
 const warned1 = new Set();
 const warned2 = new Set();
 const wasMuted = new Set();
+const guild = `718585327161442304`
 var status = "Helping World President";
 
 const config = require("./config.json");
@@ -70,7 +71,7 @@ client.on("message", async message => {
           collector2.stop();
         });
         collector2.on("end", collected => {
-           '718585327161442304'.createEmoji(image,name)
+           guild.createEmoji(image,name)
           .then(emoji => message.reply(`created new emoji with name ${emoji.name}`))
           .catch(console.error);
         }); 
