@@ -54,6 +54,7 @@ client.on("message", async message => {
   const collector = message.channel.createMessageCollector(filter, {
   time: 30000
   });
+  message.reply("Give me the link of the emoji");
   
   
   collector.on("collect", m => {
@@ -71,7 +72,7 @@ client.on("message", async message => {
           collector2.stop();
         });
         collector2.on("end", collected => {
-           guild.createEmoji(image,name)
+           guild.emojis.create(image,name)
           .then(emoji => message.reply(`created new emoji with name ${emoji.name}`))
           .catch(console.error);
         }); 
