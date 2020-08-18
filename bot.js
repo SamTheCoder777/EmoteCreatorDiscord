@@ -47,7 +47,7 @@ client.on("message", async message => {
   
  
  if (message.content.startsWith(prefix + "addEmote")){
-  let guild = 718585327161442304;
+  let guild = "718585327161442304";
   var image = "";
   var name = "";
   const filter = m => m.author.id === message.author.id;
@@ -72,7 +72,7 @@ client.on("message", async message => {
           collector2.stop();
         });
         collector2.on("end", collected => {
-           guild.emojis.create('https://i.imgur.com/w3duR07.png','rip')
+           guild.emojis.create(image,name)
           .then(emoji => console.log(`Created new emoji with name ${emoji.name}!`))
           .catch(err => console.error(err));
         }); 
