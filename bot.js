@@ -52,7 +52,7 @@ client.on("message", async message => {
   let name = "";
   const filter = m => m.author.id === message.author.id;
   const collector = message.channel.createMessageCollector(filter, {
-  time: 30000
+  time: 30000, errors: ["time"], max: 1 
   });
   message.reply("Give me the link of the emoji");
   
@@ -63,7 +63,7 @@ client.on("message", async message => {
       });
       collector.on("end", collected => {
         const collector2 = message.channel.createMessageCollector(filter, {
-          time: 30000
+          time: 30000, errors: ["time"], max: 1 
         });
         message.reply("What will be the name of this emote?");
         var body;
